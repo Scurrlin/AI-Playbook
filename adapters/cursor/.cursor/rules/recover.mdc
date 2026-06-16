@@ -1,0 +1,8 @@
+---
+description: Use when repeated fixes are making the work worse, the session feels confused, or the user invokes /recover.
+alwaysApply: false
+---
+
+Follow `skills/recover/SKILL.md`.
+
+Diagnose the failure mode before proposing or making another fix.

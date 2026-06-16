@@ -1,0 +1,8 @@
+---
+description: Use when the user asks to save session memory, restore memory, continue from memory, or invokes /remember save or /remember restore.
+alwaysApply: false
+---
+
+Follow `skills/remember/SKILL.md`.
+
+Never persist secrets. Save only the concise handoff context needed for a future session.

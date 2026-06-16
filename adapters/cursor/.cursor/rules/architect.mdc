@@ -1,0 +1,8 @@
+---
+description: Use when the user asks to plan, architect, scope, or blueprint a feature before building, or invokes /architect.
+alwaysApply: false
+---
+
+Follow `skills/architect/SKILL.md`.
+
+Do not implement during the architecture workflow. Produce the plan and wait for confirmation before building.

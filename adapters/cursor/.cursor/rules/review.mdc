@@ -1,0 +1,8 @@
+---
+description: Use when the user asks for review, code review, production readiness, plan alignment, or invokes /review.
+alwaysApply: false
+---
+
+Follow `skills/review/SKILL.md`.
+
+Report findings first. Do not fix issues unless the user asks for a follow-up change.

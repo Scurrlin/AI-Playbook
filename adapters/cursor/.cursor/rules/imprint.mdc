@@ -1,0 +1,8 @@
+---
+description: Use after UI work creates or changes reusable visual patterns, when auditing UI consistency, or when the user invokes /imprint.
+alwaysApply: false
+---
+
+Follow `skills/imprint/SKILL.md`.
+
+Capture reusable UI patterns in `context/ui-registry.md` so future interface work stays consistent.
