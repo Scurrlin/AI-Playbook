@@ -23,6 +23,8 @@ Use the files in `context/` as the project source of truth:
 - `context/project-overview.md` - product purpose, users, goals, scope, and success criteria.
 - `context/architecture.md` - system boundaries, ownership, data flow, integrations, and invariants.
 - `context/code-standards.md` - engineering standards that apply across the project.
+- `context/data-standards.md` - standards for data ingestion, transformation, analysis, and visualization.
+- `context/ai-standards.md` - standards for building generative AI solutions: prompts, GPTs, and agent workflows.
 - `context/ai-workflow-rules.md` - collaboration rules for planning, building, reviewing, and recovering.
 - `context/ui-rules.md` - UI and design guidance when the project has an interface.
 - `context/ui-registry.md` - reusable visual patterns captured as the interface evolves.
@@ -30,7 +32,7 @@ Use the files in `context/` as the project source of truth:
 - `context/build-plan.md` - phased implementation plan.
 - `context/progress-tracker.md` - durable current status, completed work, decisions, and next step.
 
-A separate `memory.md` may exist in the project root. It is the per-session handoff written by `/remember save` and holds transient session state, not durable project status. When they overlap, treat `context/progress-tracker.md` as the durable record and `memory.md` as the latest session handoff.
+A separate `memory.md` may exist in the project root. It is the per-session handoff written by `/rememberSave` and holds transient session state, not durable project status. When they overlap, treat `context/progress-tracker.md` as the durable record and `memory.md` as the latest session handoff.
 
 If context is missing, still full of placeholders, or contradicted by the actual project, call that out before implementing. Update the relevant context file when a meaningful decision, boundary, pattern, or progress state changes.
 
@@ -40,9 +42,10 @@ Use the matching file in `skills/` when a slash workflow applies:
 
 - `/architect` -> `skills/architect/SKILL.md`
 - `/review` -> `skills/review/SKILL.md`
-- `/remember save` and `/remember restore` -> `skills/remember/SKILL.md`
+- `/rememberSave` and `/rememberRestore` -> `skills/remember/SKILL.md`
 - `/recover` -> `skills/recover/SKILL.md`
 - `/imprint` -> `skills/imprint/SKILL.md`
+- `/promptSave` -> `skills/promptSave/SKILL.md`
 
 ## Development Philosophy
 

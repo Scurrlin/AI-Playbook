@@ -28,22 +28,22 @@ If unsure whether something is sensitive, treat it as sensitive and omit or reda
 **To save at end of session:**
 
 ```
-/remember save
+/rememberSave
 ```
 
 **To restore at start of new session:**
 
 ```
-/remember restore
+/rememberRestore
 ```
 
-If the developer just runs `/remember` without specifying — ask them which one they need.
+If the developer just runs `/remember` without specifying — ask whether they want `/rememberSave` or `/rememberRestore`.
 
 ---
 
 ## Save Mode
 
-When the developer runs `/remember save`:
+When the developer runs `/rememberSave`:
 
 ### What to capture
 
@@ -141,14 +141,14 @@ After writing the file, confirm to the developer:
 ```
 Memory saved to memory.md.
 
-Next session: run /remember restore to pick up from here.
+Next session: run /rememberRestore to pick up from here.
 ```
 
 ---
 
 ## Restore Mode
 
-When the developer runs `/remember restore` at the start of a new session:
+When the developer runs `/rememberRestore` at the start of a new session:
 
 ### Step 1 — Find the memory
 
@@ -158,7 +158,7 @@ Look for `memory.md` in the project root. If it does not exist, tell the develop
 No memory.md found in this project.
 
 Either this is the first session, or the file was not saved.
-To save memory at the end of a session, run /remember save.
+To save memory at the end of a session, run /rememberSave.
 ```
 
 ### Step 2 — Read everything available
@@ -209,8 +209,8 @@ Do not guess. Do not assume. Surface the gap and let the developer decide.
 
 ## The Rule
 
-Every session ends with `/remember save`.
-Every session starts with `/remember restore`.
+Every session ends with `/rememberSave`.
+Every session starts with `/rememberRestore`.
 
 That is the whole system. Consistent use is what makes it work.
 A skill used sometimes is a skill that cannot be relied on.

@@ -19,9 +19,10 @@ Matching workflows:
 
 - `/architect` -> `skills/architect/SKILL.md`
 - `/review` -> `skills/review/SKILL.md`
-- `/remember save` and `/remember restore` -> `skills/remember/SKILL.md`
+- `/rememberSave` and `/rememberRestore` -> `skills/remember/SKILL.md`
 - `/recover` -> `skills/recover/SKILL.md`
 - `/imprint` -> `skills/imprint/SKILL.md`
+- `/promptSave` -> `skills/promptSave/SKILL.md`
 
 When a workflow applies, read the matching skill file and follow it.
 
@@ -96,7 +97,7 @@ At meaningful stopping points, save only the context a future session needs:
 - What is incomplete or risky.
 - What should happen next.
 
-Do not store secrets. Use `/remember save` and `/remember restore` by reading `skills/remember/SKILL.md`.
+Do not store secrets. Use `/rememberSave` and `/rememberRestore` by reading `skills/remember/SKILL.md`.
 
 ## Recover Deliberately
 

@@ -1,5 +1,5 @@
 ---
-description: Use when the user asks to save session memory, restore memory, continue from memory, or invokes /remember save or /remember restore.
+description: Use when the user asks to save session memory, restore memory, continue from memory, or invokes /rememberSave or /rememberRestore.
 alwaysApply: false
 ---
 

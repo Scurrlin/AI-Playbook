@@ -1,0 +1,8 @@
+---
+description: Use when the user wants to design, optimize, or document a prompt or GPT as a reusable asset, or invokes /promptSave.
+alwaysApply: false
+---
+
+Follow `skills/promptSave/SKILL.md`.
+
+Design, test, and document the prompt or GPT as a reusable, governed asset. Do not ship it until it clears the test cases.

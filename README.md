@@ -20,7 +20,7 @@ Then fill in the placeholders in `AGENTS.md` and the files in `context/` with th
 - `context/` is the project memory. It explains what the project is, how it is structured, what rules matter, and what is currently happening.
 - `skills/` is the workflow library. Each slash command points to a matching `skills/<name>/SKILL.md` file.
 - `integrations/` contains optional tool-specific layouts for Claude Code, Codex, and Cursor.
-- `memory.md` is the per-session handoff file written by `/remember save` in the project root. It is transient session state, distinct from `context/progress-tracker.md`, which holds durable project status. It appears once you first save memory.
+- `memory.md` is the per-session handoff file written by `/rememberSave` in the project root. It is transient session state, distinct from `context/progress-tracker.md`, which holds durable project status. It appears once you first save memory.
 
 The README is for humans. `AGENTS.md` is the reusable agent guide the AI reads while working.
 
@@ -32,10 +32,11 @@ Use these in your AI chat when the moment calls for a specific workflow:
 | ------- | ----------- |
 | `/architect` | You want to think through a feature before building. |
 | `/review` | You want to check completed work before moving on. |
-| `/remember save` | You are ending a session and want to preserve handoff context. |
-| `/remember restore` | You are starting a new session and want to pick up cleanly. |
+| `/rememberSave` | You are ending a session and want to preserve handoff context. |
+| `/rememberRestore` | You are starting a new session and want to pick up cleanly. |
 | `/recover` | Repeated fixes are making the work worse. |
 | `/imprint` | UI work created a reusable pattern that should stay consistent. |
+| `/promptSave` | You want to design, optimize, and document a prompt or GPT as a reusable asset. |
 
 If your AI tool supports slash skills, it can treat these as commands. If it does not, use the same slash text anyway; it tells the AI to read the matching file in `skills/` and follow it.
 
