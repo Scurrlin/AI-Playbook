@@ -1,0 +1,13 @@
+@AGENTS.md
+
+Treat `AGENTS.md` and `context/` as the project sources of truth.
+
+Before planning or changing code:
+
+- Read the relevant project context.
+- Inspect the current project state.
+- Call out missing, placeholder, or contradictory context before implementing.
+- Keep changes focused, visible, and verifiable.
+- Update relevant context when decisions, architecture, standards, progress, or reusable UI patterns change.
+
+When a workflow applies, follow the matching file in `skills/`.

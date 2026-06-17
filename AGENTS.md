@@ -28,7 +28,9 @@ Use the files in `context/` as the project source of truth:
 - `context/ui-registry.md` - reusable visual patterns captured as the interface evolves.
 - `context/library-docs.md` - project-specific notes for libraries, services, tools, and APIs.
 - `context/build-plan.md` - phased implementation plan.
-- `context/progress-tracker.md` - current status, completed work, decisions, and next step.
+- `context/progress-tracker.md` - durable current status, completed work, decisions, and next step.
+
+A separate `memory.md` may exist in the project root. It is the per-session handoff written by `/remember save` and holds transient session state, not durable project status. When they overlap, treat `context/progress-tracker.md` as the durable record and `memory.md` as the latest session handoff.
 
 If context is missing, still full of placeholders, or contradicted by the actual project, call that out before implementing. Update the relevant context file when a meaningful decision, boundary, pattern, or progress state changes.
 
@@ -80,6 +82,8 @@ Follow `context/code-standards.md` and the conventions already present in the pr
 - Validate unknown external input at the system boundary.
 - Handle expected failures explicitly.
 - Keep secrets out of source files, docs, logs, AI chats, screenshots, and memory.
+
+Reach for the least code that fully solves the task, stopping at the first rung that holds: (1) does it need to exist, (2) standard library, (3) native platform feature, (4) installed dependency, (5) one line, (6) the minimum that works. This reduces code, not rigor: never cut validation, data-loss handling, security, or accessibility to make something shorter.
 
 ## UI Work
 

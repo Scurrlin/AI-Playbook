@@ -60,17 +60,19 @@ Which component should I capture patterns from?
 
 ## Step 2 — Extract What Matters for Consistency
 
-Read the component code. Extract only the classes and values that affect visual consistency across the interface. Not everything — only what makes components look like they belong together.
+Read the component code. Extract only the style values that affect visual consistency across the interface. Not everything — only what makes components look like they belong together.
+
+Capture whatever form the project uses to express style: utility classes (for example `bg-`, `rounded-`, `text-`), design tokens, CSS variables, CSS module or styled-component rules, or inline values. Record the actual value used, not the mechanism.
 
 **Extract these:**
 
-- Background — what bg- class is used for the container, cards, panels
+- Background — the value used for the container, cards, panels
 - Border — border color, border width, border style
-- Border radius — rounded- class used for this component type
-- Text colors — primary text, secondary text, muted text classes
+- Border radius — the radius used for this component type
+- Text colors — primary text, secondary text, muted text
 - Text sizes and weights — for headings, body, labels, captions
 - Spacing — padding inside the component, gap between elements
-- Interactive states — hover, focus, active classes
+- Interactive states — hover, focus, active
 - Shadow — if used
 - Any accent or brand color usage
 
@@ -94,27 +96,29 @@ If an entry for this component type already exists — update it rather than dup
 
 ### Entry format
 
+This matches the neutral `Property` / `Standard` columns used in `context/ui-registry.md`. Fill each standard with whatever the project uses: a class, token, variable, or value.
+
 ```markdown
 ### [Component Name]
 
 File: [filepath]
 Last updated: [date]
 
-| Property         | Class           |
-| ---------------- | --------------- |
-| Background       | [class]         |
-| Border           | [class]         |
-| Border radius    | [class]         |
-| Text — primary   | [class]         |
-| Text — secondary | [class]         |
-| Spacing          | [class]         |
-| Hover state      | [class]         |
-| Shadow           | [class or none] |
-| Accent usage     | [class or none] |
+| Property         | Standard          |
+| ---------------- | ----------------- |
+| Background       | [value]           |
+| Border           | [value]           |
+| Border radius    | [value]           |
+| Text — primary   | [value]           |
+| Text — secondary | [value]           |
+| Spacing          | [value]           |
+| Hover state      | [value]           |
+| Shadow           | [value or none]   |
+| Accent usage     | [value or none]   |
 
 **Pattern notes:**
 [Any important pattern decisions worth noting —
-why a specific class was chosen, what this component
+why a specific value was chosen, what this component
 should always match, what variations are allowed]
 ```
 
@@ -128,12 +132,12 @@ After writing to context/ui-registry.md, confirm to the developer:
 Imprinted [Component Name] -> context/ui-registry.md
 
 Captured:
-- Background: [class]
-- Border: [class]
-- Radius: [class]
-- Text: [classes]
-- Spacing: [classes]
-- Hover: [class]
+- Background: [value]
+- Border: [value]
+- Radius: [value]
+- Text: [values]
+- Spacing: [values]
+- Hover: [value]
 
 Any future component of this type should match these patterns.
 ```
@@ -187,33 +191,33 @@ For each visual property that matters for consistency, list every variation foun
 ### Conflicts found
 
 **Border radius**
-[List every rounded- variant found and which components use it]
+[List every radius value found and which components use it]
 Recommendation: [which one to standardise on and why]
 
 **Background colors**
-[List every bg- class found — flag any hardcoded hex values]
-Recommendation: [which token classes should replace them]
+[List every background value found — flag any raw or one-off values]
+Recommendation: [which token or shared value should replace them]
 
 **Text colors**
-[List every text- color class found — flag any that bypass the design system]
-Recommendation: [which token classes should replace them]
+[List every text color value found — flag any that bypass the design system]
+Recommendation: [which token or shared value should replace them]
 
 **Spacing**
 [List padding and gap variations found]
 Recommendation: [which values to standardise on]
 
 **Border colors**
-[List every border color class found]
-Recommendation: [which token class to standardise on]
+[List every border color value found]
+Recommendation: [which token or shared value to standardise on]
 
 **Interactive states**
 [List hover, focus, active variations found]
 Recommendation: [which pattern to standardise on]
 
 ### Hardcoded values found
-[List every hardcoded hex value, raw color class, or
+[List every raw hex value, one-off color, or
 non-token value found — with the file and line where it appears]
-These must be replaced with design system tokens.
+These should be replaced with the project's design tokens or shared values.
 
 ### Recommended baseline
 [The correct pattern for each property —
@@ -247,18 +251,18 @@ After the developer confirms — write the agreed baseline to `context/ui-regist
 
 [Note: This baseline was established via /imprint audit]
 
-| Property         | Correct class |
-| ---------------- | ------------- |
-| Card background  | [class]       |
-| Card border      | [class]       |
-| Card radius      | [class]       |
-| Button primary   | [class]       |
-| Button secondary | [class]       |
-| Text primary     | [class]       |
-| Text secondary   | [class]       |
-| Text muted       | [class]       |
-| Input background | [class]       |
-| Input border     | [class]       |
+| Property         | Correct standard |
+| ---------------- | ---------------- |
+| Card background  | [value]          |
+| Card border      | [value]          |
+| Card radius      | [value]          |
+| Button primary   | [value]          |
+| Button secondary | [value]          |
+| Text primary     | [value]          |
+| Text secondary   | [value]          |
+| Text muted       | [value]          |
+| Input background | [value]          |
+| Input border     | [value]          |
 ```
 
 ### Step 5 — List what needs fixing

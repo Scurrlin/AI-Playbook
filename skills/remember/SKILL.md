@@ -7,6 +7,10 @@ AI has no memory between sessions. Every new session starts blank. This skill fi
 
 Run it at the end of a session to save. Run it at the start of a new session to restore. That is all it does — but done consistently, it means nothing ever gets lost.
 
+## memory.md vs context/progress-tracker.md
+
+`memory.md` is the transient handoff for the very next session — what just happened and what to do first. `context/progress-tracker.md` is the durable project record — status, decisions, and risks that outlive a single session. Keep session-specific detail in `memory.md`; promote anything that future work will depend on into `context/progress-tracker.md`.
+
 ## Security Boundary
 
 This skill must never persist secrets. If any sensitive value appears in the conversation or context, do not copy it to `memory.md`.

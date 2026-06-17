@@ -166,7 +166,7 @@ Before the session ends, extract anything valuable from the current state:
 - What has been learned about what does not work?
 - What should the next session avoid?
 
-Write this as a brief reset note:
+Write this as a brief reset note. Save it to `memory.md` in the project root so the next session can pick it up with `/remember restore`; if a durable record is more appropriate, add it to `context/progress-tracker.md` instead:
 
 ```
 ## Reset Note — [Feature Name]
@@ -189,7 +189,7 @@ Write this as a brief reset note:
 ```
 Next steps:
 
-1. Save this reset note somewhere accessible
+1. Save this reset note to memory.md (or context/progress-tracker.md)
 2. End this session completely
 3. Start a fresh session
 4. Begin with /remember restore if memory exists

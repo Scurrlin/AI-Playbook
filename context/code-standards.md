@@ -12,6 +12,19 @@ Purpose: engineering standards that apply across the project.
 - Refactor when repetition or complexity is real, not predicted.
 - Leave unrelated code and files alone.
 
+## Minimal Implementation Ladder
+
+Before writing code, stop at the first rung that holds:
+
+1. Does this need to exist at all? If not, do not build it.
+2. Does the standard library already do it? Use it.
+3. Is there a native platform or language feature? Use it.
+4. Does an already-installed dependency do it? Use it.
+5. Is it one line? Write the one line.
+6. Only then write the minimum implementation that works.
+
+This reduces code, not rigor. Never cut trust-boundary validation, data-loss handling, security, or accessibility to make something shorter. The goal is code that is small because it is necessary, not golfed.
+
 ## Project Boundaries
 
 - Follow the ownership rules in `context/architecture.md`.
