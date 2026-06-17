@@ -43,10 +43,10 @@ flowchart TD
     Architect --> BuildStep["Build the feature"]
     BuildStep --> Review["/review: verify the work"]
     BuildStep --> Imprint["/imprint: capture UI patterns"]
-    BuildStep -.->|stuck| Recover["/recover: diagnose and reset"]
+    BuildStep -.-> Recover["/recover: diagnose and reset"]
     AI --> PromptSave["/promptSave: build a reusable prompt asset"]
     Review --> Save["/rememberSave: save session state"]
-    Save -.->|new session| Restore["/rememberRestore: pick up cleanly"]
+    Save -.-> Restore["/rememberRestore: pick up cleanly"]
     Restore --> AI
 ```
 
