@@ -1,8 +1,16 @@
-# AI Building Playbook
+# Practical AI Playbook
 
 This is a drag-and-drop playbook for building software with AI.
 
 It is not a framework, package, or tool install. It is a small set of project files that help an AI assistant understand the project, follow the same working rules every time, and use repeatable slash-skill workflows.
+
+## Quickstart
+
+1. Copy `AGENTS.md`, `context/`, and `skills/` into your project root.
+2. Fill in the `[PLACEHOLDER]` tokens in `AGENTS.md` and only the `context/` templates your project needs (see [Project Profiles](#project-profiles)).
+3. Tell your AI assistant: "Read `AGENTS.md` and `context/` before planning or making changes."
+
+That is the whole setup. From here the AI follows the same working rules every session, and you can call the slash skills (`/architect`, `/review`, `/rememberSave`, and the rest) whenever the moment calls for one.
 
 ## Drop Into Any Project
 
@@ -90,10 +98,10 @@ Not every project needs every file. The use-as-is standards always come along (t
 | Project type | Fill these templates | Standards that apply | Skip |
 | ------------ | -------------------- | -------------------- | ---- |
 | Full AI application (UI + AI + data + API) | All templates | code, data, ai, workflow | None |
-| Internal web app or dashboard (light or no AI) | `project-overview`, `architecture`, `build-plan`, `progress-tracker`, `library-docs`, `ui-rules`, `ui-registry` | code, workflow (data if data-backed) | `ai-standards` if no model use |
-| Data analysis, visualization, or notebook | `project-overview` (light), `progress-tracker`, `library-docs` | code, data, workflow (ai if using models) | `architecture`, `build-plan`, `ui-rules`, `ui-registry` |
-| API or automation script (small) | `AGENTS.md` (light), `progress-tracker` (optional) | code, workflow | `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data`, `ai` unless relevant |
-| Prompt or GPT asset | `AGENTS.md` (light), `project-overview` (light) | ai, workflow | `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data` |
+| Internal web app or dashboard (light or no AI) | `project-overview`<br>`architecture`<br>`build-plan`<br>`progress-tracker`<br>`library-docs`<br>`ui-rules`<br>`ui-registry` | code, workflow (data if data-backed) | `ai-standards` if no model use |
+| Data analysis, visualization, or notebook | `project-overview` (light)<br>`progress-tracker`<br>`library-docs` | code, data, workflow (ai if using models) | `architecture`, `build-plan`, `ui-rules`, `ui-registry` |
+| API or automation script (small) | `AGENTS.md` (light)<br>`progress-tracker` (optional) | code, workflow | `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data`, `ai` unless relevant |
+| Prompt or GPT asset | `AGENTS.md` (light)<br>`project-overview` (light) | ai, workflow | `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data` |
 
 Rule of thumb: keep all the standards files, fill only the templates your project actually needs, and mark the rest `not applicable` (or delete them). The Prompt or GPT asset profile leans on the `/promptSave` skill; the AI application and web app profiles use the UI skills like `/imprint`.
 
