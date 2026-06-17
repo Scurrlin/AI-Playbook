@@ -32,6 +32,8 @@ Use the files in `context/` as the project source of truth:
 - `context/build-plan.md` - phased implementation plan.
 - `context/progress-tracker.md` - durable current status, completed work, decisions, and next step.
 
+The `*-standards.md` files and `context/ai-workflow-rules.md` are use-as-is standards; the rest of `context/` and `AGENTS.md` are fill-in templates that may not all apply to a given project. See the README "Project Profiles" section for which files each kind of project needs.
+
 A separate `memory.md` may exist in the project root. It is the per-session handoff written by `/rememberSave` and holds transient session state, not durable project status. When they overlap, treat `context/progress-tracker.md` as the durable record and `memory.md` as the latest session handoff.
 
 If context is missing, still full of placeholders, or contradicted by the actual project, call that out before implementing. Update the relevant context file when a meaningful decision, boundary, pattern, or progress state changes.

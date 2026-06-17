@@ -62,7 +62,7 @@ This reduces sprawl, not rigor. Never cut evaluation, governance, or sensitive-d
 - Do not put PII, account data, credentials, secrets, or material non-public information into prompts or third-party tools without approval.
 - Redact or use synthetic stand-ins in examples, shared assets, and documentation.
 - Confirm where prompt data is sent, stored, and retained before using real data.
-- Follow the firm's data handling and approval rules; when unsure, treat the data as sensitive.
+- Follow the project's data handling and approval rules; when unsure, treat the data as sensitive.
 
 ## Non-Determinism And Reliability
 

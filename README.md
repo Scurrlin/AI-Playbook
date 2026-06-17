@@ -24,6 +24,41 @@ Then fill in the placeholders in `AGENTS.md` and the files in `context/` with th
 
 The README is for humans. `AGENTS.md` is the reusable agent guide the AI reads while working.
 
+## How It Fits Together
+
+You drop in three folders. The AI reads `AGENTS.md` and `context/` as its source of truth, then the slash skills wrap each moment of the build lifecycle.
+
+```mermaid
+flowchart TD
+    Repo["Your repo root"]
+    Repo --> Agents["AGENTS.md (standing guide)"]
+    Repo --> Context["context/ (project memory)"]
+    Repo --> Skills["skills/ (slash workflows)"]
+
+    Agents --> AI(("AI assistant"))
+    Context --> AI
+    Skills --> AI
+
+    AI --> Architect["/architect: plan before building"]
+    Architect --> BuildStep["Build the feature"]
+    BuildStep --> Review["/review: verify the work"]
+    BuildStep --> Imprint["/imprint: capture UI patterns"]
+    BuildStep -.->|stuck| Recover["/recover: diagnose and reset"]
+    AI --> PromptSave["/promptSave: build a reusable prompt asset"]
+    Review --> Save["/rememberSave: save session state"]
+    Save -.->|new session| Restore["/rememberRestore: pick up cleanly"]
+    Restore --> AI
+```
+
+## Standards vs Templates
+
+The files in `context/` come in two kinds. Knowing which is which saves time:
+
+- **Use-as-is standards** (no editing required): `context/code-standards.md`, `context/data-standards.md`, `context/ai-standards.md`, and `context/ai-workflow-rules.md`. They work immediately. Only edit one if a project rule differs from what it says.
+- **Fill-in templates** (project memory, full of `[PLACEHOLDER]` tokens): `AGENTS.md`, `context/project-overview.md`, `context/architecture.md`, `context/build-plan.md`, `context/progress-tracker.md`, `context/library-docs.md`, `context/ui-rules.md`, and `context/ui-registry.md`. Replace the placeholders with your project's real details, or mark a file `not applicable` if your project does not need it.
+
+You do not need every template for every project. See [Project Profiles](#project-profiles) for which files each kind of project actually needs.
+
 ## Skill Commands
 
 Use these in your AI chat when the moment calls for a specific workflow:
@@ -47,6 +82,20 @@ If your AI tool supports slash skills, it can treat these as commands. If it doe
 3. Ask the AI to read `AGENTS.md` before planning or changing code.
 4. Use slash skills for planning, review, memory, recovery, and UI consistency.
 5. Keep `context/` updated when decisions, architecture, standards, or progress change.
+
+## Project Profiles
+
+Not every project needs every file. The use-as-is standards always come along (they cost nothing to keep), so the only real question is which templates you fill in. Use the profile closest to your project, then adjust.
+
+| Project type | Fill these templates | Standards that apply | Skip |
+| ------------ | -------------------- | -------------------- | ---- |
+| Full AI application (UI + AI + data + API) | All templates | code, data, ai, workflow | None |
+| Internal web app or dashboard (light or no AI) | `project-overview`, `architecture`, `build-plan`, `progress-tracker`, `library-docs`, `ui-rules`, `ui-registry` | code, workflow (data if data-backed) | `ai-standards` if no model use |
+| Data analysis, visualization, or notebook | `project-overview` (light), `progress-tracker`, `library-docs` | code, data, workflow (ai if using models) | `architecture`, `build-plan`, `ui-rules`, `ui-registry` |
+| API or automation script (small) | `AGENTS.md` (light), `progress-tracker` (optional) | code, workflow | `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data`, `ai` unless relevant |
+| Prompt or GPT asset | `AGENTS.md` (light), `project-overview` (light) | ai, workflow | `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data` |
+
+Rule of thumb: keep all the standards files, fill only the templates your project actually needs, and mark the rest `not applicable` (or delete them). The Prompt or GPT asset profile leans on the `/promptSave` skill; the AI application and web app profiles use the UI skills like `/imprint`.
 
 ## Tool Integrations
 
