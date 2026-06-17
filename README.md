@@ -1,8 +1,6 @@
 # Practical AI Playbook
 
-This is a drag-and-drop playbook for building software with AI.
-
-It is not a framework, package, or tool install. It is a small set of project files that help an AI assistant understand the project, follow the same working rules every time, and use repeatable slash-skill workflows.
+This is a practical drag-and-drop playbook for building software with AI that won't burn through your entire token budget. It’s not a fancy framework or toolchain; it’s just a small set of project files that help your AI assistant understand exactly what you’re building.
 
 ## Quickstart
 
@@ -10,17 +8,9 @@ It is not a framework, package, or tool install. It is a small set of project fi
 2. Fill in the `[PLACEHOLDER]` tokens in `AGENTS.md` and only the `context/` templates your project needs (see [Project Profiles](#project-profiles)).
 3. Tell your AI assistant: "Read `AGENTS.md` and `context/` before planning or making changes."
 
-That is the whole setup. From here the AI follows the same working rules every session, and you can call the slash skills (`/architect`, `/review`, `/rememberSave`, and the rest) whenever the moment calls for one.
+That's the whole setup. Your AI assistant will now follow the same working rules every session, and you can call the slash skills (`/architect`, `/review`, `/rememberSave`, etc.) whenever the moment calls for it.
 
-## Drop Into Any Project
-
-Add these to the root of your project:
-
-- `AGENTS.md`
-- `context/`
-- `skills/`
-
-Then fill in the placeholders in `AGENTS.md` and the files in `context/` with that project's actual goals, architecture, standards, constraints, current plan, and progress.
+If that's all you need, you're good to go. If you want more help understanding how the pieces fit together, keep reading.
 
 ## What Each Part Is For
 
