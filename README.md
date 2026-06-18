@@ -1,6 +1,6 @@
 # Practical AI Playbook
 
-This is a practical, drag-and-drop playbook for creating software with AI (that won't burn through your entire token budget). It’s not some fancy framework or 10x toolchain; it’s just a small set of project files that will help your AI assistant understand exactly what you want to build.
+This is a practical, drag-and-drop playbook for creating software with AI (that won't burn through your entire token budget). It's not some fancy framework or 10x toolchain; it's just a small set of project files that will help your AI assistant understand exactly what you want to build.
 
 ## Getting Started
 
@@ -24,7 +24,7 @@ That said, if you're new to coding with AI, or just want to know more about how 
 
 ## How It Fits Together
 
-The `AGENTS.md` file and `context/` folder work in tandem as a single, comprehensive source of truth. This combined guidance tethers the actions of your AI assistant to the task at hand while reducing token usage. The slash skills are theoretically unneccessary for successful outcomes, but they're extremely helpful for dealing with (or even outright preventing) hallucinations, drift, and other common issues associated with AI workflows.
+The `AGENTS.md` file and `context/` folder work in tandem as a single, comprehensive source of truth. This combined guidance tethers the actions of your AI assistant to the task at hand while reducing token usage. The slash skills are theoretically unnecessary for successful outcomes, but they're extremely helpful for dealing with (or even outright preventing) hallucinations, drift, and other common issues associated with AI workflows.
 
 ```mermaid
 flowchart TD
@@ -52,17 +52,17 @@ flowchart TD
 
 The files in `context/` come in two distinct flavors. Knowing which is which will save you time (and tokens):
 
-- **Use-as-is standards** (no editing required): `context/code-standards.md`, `context/data-standards.md`, `context/ai-standards.md`, and `context/ai-workflow-rules.md`.
+- **Use-as-is standards**: `context/code-standards.md`, `context/data-standards.md`, `context/ai-standards.md`, and `context/ai-workflow-rules.md`.
 
 These work broadly and immediately, but can be tailored to fit your project's specific governance needs.
 
-- **Fill-in templates** (project memory, full of `[PLACEHOLDER]` tokens): `AGENTS.md`, `context/project-overview.md`, `context/architecture.md`, `context/build-plan.md`, `context/progress-tracker.md`, `context/library-docs.md`, `context/ui-rules.md`, and `context/ui-registry.md`.
+- **Fill-in templates**: `AGENTS.md`, `context/project-overview.md`, `context/architecture.md`, `context/build-plan.md`, `context/progress-tracker.md`, `context/library-docs.md`, `context/ui-rules.md`, and `context/ui-registry.md`.
 
 Replace the placeholders with your project's real details. Try to balance specificity with directness, but it's always better to be too detailed than not detailed enough.
 
 It's worth noting that you DO NOT need every template for every project. The [Project Profiles](#project-profiles) section covers this with more info later on.
 
-## Skill Commands
+## Slash Skills
 
 Use these slash skills in your AI chat when the moment calls for a specific workflow:
 
@@ -76,7 +76,7 @@ Use these slash skills in your AI chat when the moment calls for a specific work
 | `/imprint` | UI work created a reusable pattern that should stay consistent. |
 | `/promptSave` | You want to design, optimize, and document a prompt or GPT as a reusable asset. |
 
-If your AI tool supports slash skills, it can treat these as commands. If it doesn't, there's no need to worry. Using the slash skill in this case will directly tell the AI to read the matching file in `skills/` and follow it's instructions.
+If your AI tool supports slash skills, it can treat these as commands. If it doesn't, there's no need to worry. Using the slash skill in this case will directly tell the AI to read the matching file in `skills/` and follow its instructions.
 
 ## Quick Review
 
@@ -90,7 +90,7 @@ Before moving on to the project templates, let's recap everything we've covered 
 
 ## Project Profiles
 
-Remember, not every project will need every file. The use-as-is standards should always be included, but the context files should only be used if they are relevant to your project. Use the template that best fits your needs, then adjust it from there.
+Remember, not every project will need every file. The use-as-is standards should always be included, but the context files should only be used if they are relevant to your project. Start with the template that best fits your needs, then adjust it from there.
 
 ### Full AI application (UI + AI + data + API)
 
@@ -192,10 +192,8 @@ Cursor uses project rules at `.cursor/rules/*.mdc`. These rules route Cursor to 
 
 ### Keeping Integrations In Sync
 
-The base `skills/` folder is the source of truth. The Claude and Codex integrations contain copies of each `SKILL.md`, so when you change a skill, update the matching copy under `integrations/claude/.claude/skills/` and `integrations/codex/.agents/skills/` as well. To avoid drift entirely, you can instead symlink those skill folders to the base `skills/` folder; both Claude Code and Codex follow symlinks when discovering skills.
+The Claude and Codex integrations keep their own copies of each `SKILL.md`, so when you change a skill in the base `skills/` folder, you'll need to update the matching copies under `integrations/claude/.claude/skills/` and `integrations/codex/.agents/skills/` too. If you want to skip that step, you can symlink those folders to the base `skills/` folder instead; both Claude Code and Codex follow symlinks when discovering skills.
 
-## How This Should Feel
+## Final Thoughts
 
-This playbook should not feel like busywork. It should make AI-assisted work clearer, calmer, and less likely to drift.
 
-The docs are the source of truth. The skills are the repeatable workflows. Everything is plain Markdown, so the playbook stays portable and reusable.
