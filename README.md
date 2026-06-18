@@ -1,16 +1,18 @@
 # Practical AI Playbook
 
-This is a practical drag-and-drop playbook for building software with AI that won't burn through your entire token budget. It’s not a fancy framework or toolchain; it’s just a small set of project files that help your AI assistant understand exactly what you’re building.
+This is a practical, drag-and-drop playbook for building software with AI (that won't burn through your entire token budget). It’s not some fancy framework or 10x toolchain; it’s just a small set of project files that help your AI assistant understand exactly what you’re building.
 
-## Quickstart
+## Getting Started
 
 1. Copy `AGENTS.md`, `context/`, and `skills/` into your project root.
 2. Fill in the `[PLACEHOLDER]` tokens in `AGENTS.md` and only the `context/` templates your project needs (see [Project Profiles](#project-profiles)).
 3. Tell your AI assistant: "Read `AGENTS.md` and `context/` before planning or making changes."
 
-That's the whole setup. Your AI assistant will now follow the same working rules every session, and you can call the slash skills (`/architect`, `/review`, `/rememberSave`, etc.) whenever the moment calls for it.
+That's really all you need to get started. Your AI assistant will now follow the same working rules every session, and you can call the slash skills (`/architect`, `/review`, `/rememberSave`, etc.) whenever you need to.
 
-If that's all you need, you're good to go. If you want more help understanding how the pieces fit together, keep reading.
+If you're a seasoned pro, or have prior experience with AI-assisted development, feel free to skip the rest of this guide and start building.
+
+However, if you're new to coding with AI, or just want to know more about how this all works, I encourage you to keep reading.
 
 ## What Each Part Is For
 
@@ -50,9 +52,10 @@ flowchart TD
 
 ## Standards vs Templates
 
-The files in `context/` come in two kinds. Knowing which is which saves time:
+The files in `context/` come in two distinct flavors. Knowing which is which will save you time (and tokens):
 
 - **Use-as-is standards** (no editing required): `context/code-standards.md`, `context/data-standards.md`, `context/ai-standards.md`, and `context/ai-workflow-rules.md`. They work immediately. Only edit one if a project rule differs from what it says.
+
 - **Fill-in templates** (project memory, full of `[PLACEHOLDER]` tokens): `AGENTS.md`, `context/project-overview.md`, `context/architecture.md`, `context/build-plan.md`, `context/progress-tracker.md`, `context/library-docs.md`, `context/ui-rules.md`, and `context/ui-registry.md`. Replace the placeholders with your project's real details, or mark a file `not applicable` if your project does not need it.
 
 You do not need every template for every project. See [Project Profiles](#project-profiles) for which files each kind of project actually needs.
