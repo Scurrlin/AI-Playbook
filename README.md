@@ -24,7 +24,7 @@ That said, if you're new to coding with AI, or just want to know more about how 
 
 ## How It Fits Together
 
-The `AGENTS.md` and `context/` act as the two sources of truth, tethering the actions of your AI assistant to the task at hand and reducing token burn. The slash skills are theoretically unneccessary for successful implementation, but they are extremely helpful for dealing with or even outright preventing hallucinations and drift.
+The `AGENTS.md` file and `context/` folder act as a single, comprehensive source of truth, tethering the actions of your AI assistant to the task at hand and reducing token burn. The slash skills are theoretically unneccessary for successful implementation, but they are extremely helpful for dealing with or even outright preventing hallucinations and drift. They also offer many quality of life improvements for the typical painpoints most developers experience when working with AI.
 
 ```mermaid
 flowchart TD
@@ -86,7 +86,7 @@ Before moving on to the project templates, let's recap everything we've covered 
 
 ## Project Profiles
 
-As stated earlier, not every project will need every file. The use-as-is standards should always be included (they cost nothing to keep), so the only real question you need to ask yourself is which context files you need to fill in. Use the template closest to your project, then adjust it from there.
+Remember, not every project will need every file. The use-as-is standards should always be included (they cost nothing to keep), so the only real question you need to ask yourself is which context files you need to fill in. Use the template closest to your project, then adjust it from there.
 
 ### Full AI application (UI + AI + data + API)
 
