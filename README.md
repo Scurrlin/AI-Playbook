@@ -1,6 +1,6 @@
 # Practical AI Playbook
 
-This is a practical, drag-and-drop playbook for building software with AI (that won't burn through your entire token budget). It’s not some fancy framework or 10x toolchain; it’s just a small set of project files that will help your AI assistant understand exactly what you want to build.
+This is a practical, drag-and-drop playbook for creating software with AI (that won't burn through your entire token budget). It’s not some fancy framework or 10x toolchain; it’s just a small set of project files that will help your AI assistant understand exactly what you want to build.
 
 ## Getting Started
 
@@ -8,9 +8,9 @@ This is a practical, drag-and-drop playbook for building software with AI (that 
 2. Fill in the `[PLACEHOLDER]` tokens in `AGENTS.md` and only the `context/` templates your project needs (see [Project Profiles](#project-profiles)).
 3. Tell your AI assistant: "Read `AGENTS.md` and `context/` before planning or making changes."
 
-It might not seem like a lot, but that's all you need to do to start building. Your AI assistant will now follow the same working rules every session, and you can call the "slash skills" (`/architect`, `/review`, `/rememberSave`, etc.) whenever you need to.
+It might not seem like a lot, but that's all you need to do. Your AI assistant will now follow the same working rules every session, and you can call the "slash skills" (`/architect`, `/review`, `/rememberSave`, etc.) whenever you need to.
 
-If you're a seasoned pro, or have prior experience with AI-assisted development, feel free to skip the rest of this guide.
+If you're a seasoned pro, or have prior experience with AI-assisted development, feel free to skip the rest of this guide and start building.
 
 That said, if you're new to coding with AI, or just want to know more about how this all works, I encourage you to keep reading.
 
@@ -24,7 +24,7 @@ That said, if you're new to coding with AI, or just want to know more about how 
 
 ## How It Fits Together
 
-The `AGENTS.md` file and `context/` folder work in tandem as a single, comprehensive source of truth. This localized context tethers the actions of your AI assistant to the task at hand and reduces token burn. The slash skills are theoretically unneccessary for successful implementation, but they are extremely helpful for dealing with or even outright preventing hallucinations and drift. They're also designed to remove the friction associated with the typical painpoints most developers experience when working with AI.
+The `AGENTS.md` file and `context/` folder work in tandem as a single, comprehensive source of truth. This combined guidance tethers the actions of your AI assistant to the task at hand while reducing token usage. The slash skills are theoretically unneccessary for successful implementation, but they're extremely helpful for dealing with (or even outright preventing) hallucinations, drift, and other common issues associated with AI workflows.
 
 ```mermaid
 flowchart TD
