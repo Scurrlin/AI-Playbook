@@ -16,15 +16,15 @@ That said, if you're new to coding with AI, or just want to know more about how 
 
 ## What Each Part Does
 
-- `AGENTS.md` is the project-facing agent guide. Fill in its placeholders so it reads like it the primary spec guiding development.
+- `AGENTS.md` is the project-facing agent guide. Fill in its placeholders so it reads like the primary spec guiding development.
 - `context/` is the project's memory. It explains what the project is, how it is structured, what rules matter, and what is currently happening.
-- `skills/` is the workflow library. Each slash command or skill points to a matching `skills/<name>/SKILL.md` file.
+- `skills/` is the workflow library. Each slash skill points to a matching `skills/<name>/SKILL.md` file.
 - `integrations/` contains optional tool-specific layouts for Claude Code, Codex, and Cursor (if you use them).
-- `memory.md` is a transient handoff file created in the project root by `/rememberSave`. It is separate from the `context/progress-tracker.md` file which tracks overall project status. This file is created the first time you save session memory.
+- `memory.md` is a transient handoff file created in the project root by `/rememberSave`. It is separate from the `context/progress-tracker.md` file which tracks overall project status. This file is created the first time you save session memory with the `/rememberSave` skill.
 
 ## How It Fits Together
 
-The `AGENTS.md` file and `context/` folder work in tandem as a single, comprehensive source of truth. This combined guidance tethers the actions of your AI assistant to the task at hand while reducing token usage. The slash skills are theoretically unneccessary for successful implementation, but they're extremely helpful for dealing with (or even outright preventing) hallucinations, drift, and other common issues associated with AI workflows.
+The `AGENTS.md` file and `context/` folder work in tandem as a single, comprehensive source of truth. This combined guidance tethers the actions of your AI assistant to the task at hand while reducing token usage. The slash skills are theoretically unneccessary for successful outcomes, but they're extremely helpful for dealing with (or even outright preventing) hallucinations, drift, and other common issues associated with AI workflows.
 
 ```mermaid
 flowchart TD
@@ -52,11 +52,15 @@ flowchart TD
 
 The files in `context/` come in two distinct flavors. Knowing which is which will save you time (and tokens):
 
-- **Use-as-is standards** (no editing required): `context/code-standards.md`, `context/data-standards.md`, `context/ai-standards.md`, and `context/ai-workflow-rules.md`. These work broadly and immediately, but can be tailored to fit your project's specific governance needs.
+- **Use-as-is standards** (no editing required): `context/code-standards.md`, `context/data-standards.md`, `context/ai-standards.md`, and `context/ai-workflow-rules.md`.
 
-- **Fill-in templates** (project memory, full of `[PLACEHOLDER]` tokens): `AGENTS.md`, `context/project-overview.md`, `context/architecture.md`, `context/build-plan.md`, `context/progress-tracker.md`, `context/library-docs.md`, `context/ui-rules.md`, and `context/ui-registry.md`. Replace the placeholders with your project's real details. Try to balance specificty with directness, but it's always better to be too detailed than not detailed enough.
+These work broadly and immediately, but can be tailored to fit your project's specific governance needs.
 
-It's worth noting that you DO NOT need every template for every project. See the [Project Profiles](#project-profiles) section for more information on which files each project example actually needs.
+- **Fill-in templates** (project memory, full of `[PLACEHOLDER]` tokens): `AGENTS.md`, `context/project-overview.md`, `context/architecture.md`, `context/build-plan.md`, `context/progress-tracker.md`, `context/library-docs.md`, `context/ui-rules.md`, and `context/ui-registry.md`.
+
+Replace the placeholders with your project's real details. Try to balance specificity with directness, but it's always better to be too detailed than not detailed enough.
+
+It's worth noting that you DO NOT need every template for every project. The [Project Profiles](#project-profiles) section covers this with more info later on.
 
 ## Skill Commands
 
@@ -72,7 +76,7 @@ Use these slash skills in your AI chat when the moment calls for a specific work
 | `/imprint` | UI work created a reusable pattern that should stay consistent. |
 | `/promptSave` | You want to design, optimize, and document a prompt or GPT as a reusable asset. |
 
-If your AI tool supports slash skills, it can treat these as commands. If it does not, use the same slash text anyway; this will directly tell the AI to read the matching file in `skills/` and follow it's instructions.
+If your AI tool supports slash skills, it can treat these as commands. If it doesn't, there's no need to worry. Using the slash skill in this case will directly tell the AI to read the matching file in `skills/` and follow it's instructions.
 
 ## Quick Review
 
