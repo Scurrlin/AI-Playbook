@@ -199,3 +199,5 @@ The Claude and Codex integrations keep their own copies of each `SKILL.md`, so w
 You may have noticed this already, but there is some duplicated logic across the `code-standards.md`, `data-standards.md`, and `ai-standards.md` files.
 
 This is by design so that the `AGENTS.md` file can hold a maintainable version of the project's rules, while the `context/` files hold the hyperspecific implementation details. If the two ever drift apart during development, the `context/` files will take precedence.
+
+I can't promise that this playbook will turn you into an agentic mastermind like Andrej Karpathy, but I can promise that using it won't burn through your entire yearly AI budget in four months [like Uber did](https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/).
