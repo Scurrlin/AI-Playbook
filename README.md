@@ -1,6 +1,6 @@
 # Practical AI Playbook
 
-This is a practical, drag-and-drop playbook for building software with AI (that won't burn through your entire token budget). It’s not some fancy framework or 10x toolchain; it’s just a small set of project files that will help your AI assistant understand exactly what you’re building.
+This is a practical, drag-and-drop playbook for building software with AI (that won't burn through your entire token budget). It’s not some fancy framework or 10x toolchain; it’s just a small set of project files that will help your AI assistant understand exactly what you want to build.
 
 ## Getting Started
 
@@ -8,7 +8,7 @@ This is a practical, drag-and-drop playbook for building software with AI (that 
 2. Fill in the `[PLACEHOLDER]` tokens in `AGENTS.md` and only the `context/` templates your project needs (see [Project Profiles](#project-profiles)).
 3. Tell your AI assistant: "Read `AGENTS.md` and `context/` before planning or making changes."
 
-That's really all you need to start building. Your AI assistant will now follow the same working rules every session, and you can call the slash skills (`/architect`, `/review`, `/rememberSave`, etc.) whenever you need to.
+It might not seem like a lot, but that's all you need to do to start building. Your AI assistant will now follow the same working rules every session, and you can call the "slash skills" (`/architect`, `/review`, `/rememberSave`, etc.) whenever you need to.
 
 If you're a seasoned pro, or have prior experience with AI-assisted development, feel free to skip the rest of this guide.
 
@@ -24,7 +24,7 @@ That said, if you're new to coding with AI, or just want to know more about how 
 
 ## How It Fits Together
 
-The `AGENTS.md` file and `context/` folder act as a single, comprehensive source of truth, tethering the actions of your AI assistant to the task at hand and reducing token burn. The slash skills are theoretically unneccessary for successful implementation, but they are extremely helpful for dealing with or even outright preventing hallucinations and drift. They also offer many quality of life improvements for the typical painpoints most developers experience when working with AI.
+The `AGENTS.md` file and `context/` folder work in tandem as a single, comprehensive source of truth. This localized context tethers the actions of your AI assistant to the task at hand and reduces token burn. The slash skills are theoretically unneccessary for successful implementation, but they are extremely helpful for dealing with or even outright preventing hallucinations and drift. They're also designed to remove the friction associated with the typical painpoints most developers experience when working with AI.
 
 ```mermaid
 flowchart TD
@@ -74,7 +74,7 @@ Use these slash skills in your AI chat when the moment calls for a specific work
 
 If your AI tool supports slash skills, it can treat these as commands. If it does not, use the same slash text anyway; this will directly tell the AI to read the matching file in `skills/` and follow it's instructions.
 
-## How To Use It
+## Quick Review
 
 Before moving on to the project templates, let's recap everything we've covered so far:
 
@@ -132,11 +132,11 @@ Remember, not every project will need every file. The use-as-is standards should
 - **Standards that apply:** ai, workflow
 - **Skip:** `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data`
 
-Rule of thumb: keep all the standards files, fill only the templates your project actually needs, and mark the rest `not applicable` (or delete them). The Prompt or GPT asset profile leans on the `/promptSave` skill; the AI application and web app profiles use the UI skills like `/imprint`.
+Generally speaking, you should keep all the standards files, use only the templates your project actually needs, and ignore the rest. The Prompt or GPT asset profile leans on the `/promptSave` skill, while the AI application and web app profiles rely heavily on the UI skills like `/imprint`.
 
 ## Tool Integrations
 
-The base playbook is plain Markdown. For tools with their own discovery folders, copy the matching integration into the project root after adding `AGENTS.md`, `context/`, and `skills/`.
+The base version of the playbook is in plain Markdown, but there are optional integrations for tools with their own discovery folders. For these tools, copy the matching integration into the project root after adding `AGENTS.md`, `context/`, and `skills/`.
 
 ### Claude Code
 
