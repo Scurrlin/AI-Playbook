@@ -52,11 +52,23 @@ flowchart TD
 
 The files in `context/` come in two distinct flavors. Knowing which is which will save you time (and tokens):
 
-- **Use-as-is standards**: `context/code-standards.md`, `context/data-standards.md`, `context/ai-standards.md`, and `context/ai-workflow-rules.md`.
+- **Use-as-is standards**:
+  - `context/code-standards.md`
+  - `context/data-standards.md`
+  - `context/ai-standards.md`
+  - `context/ai-workflow-rules.md`
 
 These work broadly and immediately, but can be tailored to fit your project's specific governance needs.
 
-- **Fill-in templates**: `AGENTS.md`, `context/project-overview.md`, `context/architecture.md`, `context/build-plan.md`, `context/progress-tracker.md`, `context/library-docs.md`, `context/ui-rules.md`, and `context/ui-registry.md`.
+- **Fill-in templates**:
+  - `AGENTS.md`
+  - `context/project-overview.md`
+  - `context/architecture.md`
+  - `context/build-plan.md`
+  - `context/progress-tracker.md`
+  - `context/library-docs.md`
+  - `context/ui-rules.md`
+  - `context/ui-registry.md`
 
 Replace the placeholders with your project's real details. Try to balance specificity with directness, but it's always better to be too detailed than not detailed enough.
 
@@ -90,17 +102,16 @@ Before moving on to the project templates, let's recap everything we've covered 
 
 ## Project Profiles
 
-Remember, not every project will need every file. The use-as-is standards should always be included, but the context files should only be used if they are relevant to your project. Start with the template that best fits your needs, then adjust it from there.
+Remember, not every project will need every file. The use-as-is standards are generally safe to include for most projects, but the context files should only be used if they are relevant. Start with the template that best fits your needs, then adjust it from there.
 
 ### Full AI application (UI + AI + data + API)
 
-- **Fill these templates:** all templates
-- **Standards that apply:** code, data, ai, workflow
-- **Skip:** none
+- **Templates:** all templates
+- **Standards:** all standards
 
 ### Internal web app or dashboard (light or no AI)
 
-- **Fill these templates:**
+- **Templates:**
   - `project-overview`
   - `architecture`
   - `build-plan`
@@ -108,33 +119,29 @@ Remember, not every project will need every file. The use-as-is standards should
   - `library-docs`
   - `ui-rules`
   - `ui-registry`
-- **Standards that apply:** code, workflow (data if data-backed)
-- **Skip:** `ai-standards` if no model use
+- **Standards:** code, data, workflow
 
 ### Data analysis, visualization, or notebook
 
-- **Fill these templates:**
+- **Templates:**
   - `project-overview` (light)
   - `progress-tracker`
   - `library-docs`
-- **Standards that apply:** code, data, workflow (ai if using models)
-- **Skip:** `architecture`, `build-plan`, `ui-rules`, `ui-registry`
+- **Standards:** code, data, workflow
 
 ### API or automation script (small)
 
-- **Fill these templates:**
+- **Templates:**
   - `AGENTS.md` (light)
   - `progress-tracker` (optional)
-- **Standards that apply:** code, workflow
-- **Skip:** `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data`, `ai` unless relevant
+- **Standards:** code, workflow
 
 ### Prompt or GPT asset
 
-- **Fill these templates:**
+- **Templates:**
   - `AGENTS.md` (light)
   - `project-overview` (light)
-- **Standards that apply:** ai, workflow
-- **Skip:** `architecture`, `build-plan`, `ui-rules`, `ui-registry`, `data`
+- **Standards:** workflow, ai
 
 ## Tool Integrations
 
